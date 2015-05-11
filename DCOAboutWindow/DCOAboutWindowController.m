@@ -129,7 +129,9 @@
 
 - (IBAction)visitWebsite:(id)sender {
     
-    if(self.appWebsiteURL) {
+    if(self.openWebsiteDelegate) {
+        self.openWebsiteDelegate();
+    } else if(self.appWebsiteURL) {
         [[NSWorkspace sharedWorkspace] openURL:self.appWebsiteURL];
     } else {
         NSLog(@"Error: please set the appWebsiteURL property on the about window");

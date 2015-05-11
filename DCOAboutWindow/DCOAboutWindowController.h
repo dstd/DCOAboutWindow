@@ -56,6 +56,11 @@
 @property (assign) BOOL useTextViewForAcknowledgments;
 
 /**
+ *  If assigned called instead of NSWorkplace.openURL
+ */
+@property (copy) void (^openWebsiteDelegate)(void);
+
+/**
  *  Visit the website.
  *
  *  @param sender The object making the call.
